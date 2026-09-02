@@ -42,7 +42,7 @@ li {
 }
 .row {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 12px;
 }
@@ -155,7 +155,7 @@ nav {
   flex: 1;
   display: flex;
   align-items: center;
-  margin: 24px;
+  margin: 16px;
 }
 
 .about-me__img {
@@ -200,7 +200,7 @@ nav {
   transition: all 300ms ease;
 }
 
-/* I don't understand the below :( */
+/* .language__name only gets updated on hover */
 .language:hover .language__name {
   transform: scale(1);
   transition: all 300ms ease;
@@ -212,4 +212,69 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 25px 16px;
+}
+
+/* PROJECTS */
+
+.project__img {
+  width: 100%;
+  transition: all 300ms ease;
+}
+
+.project__wrapper {
+  display: flex;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  max-width: 775px;
+  max-height: 500px;
+}
+
+.project__wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1c1d25;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  z-index: 2;
+}
+
+.project:hover .project__wrapper:before {
+  opacity: 0.4;
+}
+
+.project:hover .project__img {
+  transform: scale(1.05);
+  transition: all 300ms ease;
+  filter: blur(5px);
+}
+
+.project__list {
+  padding-top: 40px;
+}
+
+.project__description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 550px;
+  z-index: 3;
+}
+/* The below doesn't center the website image: figure it out! */
+
+/* .project {
+  justify-content: center;
+} */
+.project__description--title,
+.project__description--subtitle,
+.project__description--paragraph,
+.project__description--link {
+  text-align: left;
+  color: #fff;
 }
