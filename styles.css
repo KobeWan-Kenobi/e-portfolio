@@ -185,7 +185,7 @@ nav {
   display: flex;
   align-items: center;
   margin: 16px;
-  max-width: 600px
+  max-width: 600px;
 }
 
 .about-me__img {
