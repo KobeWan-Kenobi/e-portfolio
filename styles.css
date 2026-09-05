@@ -97,7 +97,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 20px;
 }
 
 .nav__link--list {
@@ -166,7 +166,7 @@ nav {
 }
 
 .about-me__info--paragraph {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 12px;
 }
 
@@ -320,7 +320,7 @@ nav {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 100%); /* start at bottom*/
-  min-width: 60%;
+  min-width: 80%;
   max-width: 100%;
   z-index: 3;
   transition:
@@ -416,4 +416,84 @@ footer {
   opacity: 1;
   scale: 1;
   transition: all 300ms ease;
+}
+/* TABLETS */
+@media (max-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
+    color: #242424;
+    text-align: center;
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  nav {
+    height: 68px;
+  }
+
+  .about-me__info--paragraph {
+    font-size: 18px;
+  }
+  .project__wrapper {
+    flex-direction: column;
+    max-width: calc(350px * 1.5);
+    max-height: 350px;
+  }
+  /* THIS IS WHERE YOU LEFT OFF: MAKING WEBSITE RESPONSIVE */
+  .project__description--title {
+    font-size: 30px;
+  }
+  .project__description--subtitle {
+    font-size: 18px;
+  }
+  .project__description {
+    min-width: 80%;
+  }
+  .project__description--paragraph {
+    font-size: 14px;
+  }
+}
+/* SMALL PHONES  */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: 14px;
+  }
+  nav {
+    height: 60px;
+  }
+  .nav__link:not(:last-child) {
+    display: none;
+  }
+  .about-me__info--paragraph {
+    font-size: 16px;
+  }
+  .project__wrapper {
+    flex-direction: column;
+    max-width: calc(350px * 1.5);
+    max-height: 350px;
+  }
+
+  .project__description {
+    min-width: 80%;
+  }
+  .project__description--paragraph {
+    font-size: 14px;
+  }
 }
