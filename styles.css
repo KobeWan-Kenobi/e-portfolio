@@ -454,9 +454,11 @@ footer {
   /* THIS IS WHERE YOU LEFT OFF: MAKING WEBSITE RESPONSIVE */
   .project__description--title {
     font-size: 30px;
+    margin-bottom: 4px
   }
   .project__description--subtitle {
     font-size: 18px;
+    margin-bottom: 2px;
   }
   .project__description {
     min-width: 80%;
@@ -467,22 +469,8 @@ footer {
 }
 /* SMALL PHONES  */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 20px;
-  }
-
-  p {
-    line-height: 1.5;
-    font-size: 14px;
-  }
-  nav {
-    height: 60px;
-  }
   .nav__link:not(:last-child) {
     display: none;
-  }
-  .about-me__info--paragraph {
-    font-size: 16px;
   }
   .project__wrapper {
     flex-direction: column;
@@ -494,6 +482,6 @@ footer {
     min-width: 80%;
   }
   .project__description--paragraph {
-    font-size: 14px;
+    display: none;
   }
 }
