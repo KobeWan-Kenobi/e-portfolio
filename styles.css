@@ -419,18 +419,6 @@ footer {
 }
 /* TABLETS */
 @media (max-width: 768px) {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  span {
-    color: #242424;
-    text-align: center;
-    line-height: 1;
-  }
-
   h1 {
     font-size: 24px;
   }
@@ -446,15 +434,19 @@ footer {
   .about-me__info--paragraph {
     font-size: 18px;
   }
+
+  .language {
+    width: calc(100% / 3);
+  }
+
   .project__wrapper {
     flex-direction: column;
     max-width: calc(350px * 1.5);
     max-height: 350px;
   }
-  /* THIS IS WHERE YOU LEFT OFF: MAKING WEBSITE RESPONSIVE */
   .project__description--title {
     font-size: 30px;
-    margin-bottom: 4px
+    margin-bottom: 4px;
   }
   .project__description--subtitle {
     font-size: 18px;
@@ -472,6 +464,9 @@ footer {
   .nav__link:not(:last-child) {
     display: none;
   }
+  .language {
+    width: calc(100% / 2);
+  }
   .project__wrapper {
     flex-direction: column;
     max-width: calc(350px * 1.5);
@@ -480,8 +475,26 @@ footer {
 
   .project__description {
     min-width: 80%;
+    justify-content: center;
+    align-items: center;
   }
   .project__description--paragraph {
     display: none;
+  }
+
+  .project__description--link {
+    font-size: 20px;
+    margin: 0 8px;
+  }
+  .project__description--title {
+    font-size: 24px;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  .project__description--subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    text-align: center;
   }
 }
