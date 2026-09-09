@@ -32,6 +32,16 @@ a {
   text-decoration: none;
   position: relative;
 }
+i, svg {
+  display: inline-block;
+  opacity: 1;
+  scale: 1;
+  transition: scale linear 100ms;
+}
+svg:hover, i:hover {
+  scale: 1.4;
+  transition: scale linear 100ms;
+}
 
 .link__hover-effect:after {
   content: "";
@@ -159,8 +169,19 @@ nav {
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   margin-bottom: 16px;
+  animation: animate-profile-picture 800ms 300ms backwards;
 }
-
+@keyframes animate-profile-picture {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .about-me__picture {
   width: 100%;
 }
@@ -168,16 +189,31 @@ nav {
 .about-me__info--paragraph {
   font-size: 20px;
   margin-bottom: 12px;
+  animation: fade-up 800ms 200ms backwards;
 }
 
 .about-me__info--title {
   margin-bottom: 16px;
+  animation: fade-up 800ms 50ms backwards;
 }
-
+.about-me__links {
+  animation: fade-up 800ms 350ms backwards;
+}
 .about-me__link {
   font-size: 20px;
   color: #242424;
   padding: 0 16px;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .about-me__img--container {
@@ -190,10 +226,32 @@ nav {
 
 .about-me__img {
   width: 100%;
+  animation: fade-up 1000ms 350ms backwards;
 }
-
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* TECHNOLOGY STACK */
-
+.wave {
+  display: inline-block;
+  animation: animate-wave 750ms infinite ease-in-out;
+}
+@keyframes animate-wave {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 .language__list {
   display: flex;
   flex-wrap: wrap;
@@ -202,9 +260,9 @@ nav {
 }
 
 .language__img {
-  width: 100%;
-  max-width: 100px;
-  max-height: 100px;
+  height: 100%;
+  width: 100px;
+  height: 100px;
   transition: all 300ms ease;
 }
 .language:hover .language__img {
@@ -430,7 +488,9 @@ footer {
   nav {
     height: 68px;
   }
-
+  .container {
+    padding: 25px;
+  }
   .about-me__info--paragraph {
     font-size: 18px;
   }
@@ -464,8 +524,13 @@ footer {
   .nav__link:not(:last-child) {
     display: none;
   }
+
   .language {
     width: calc(100% / 2);
+  }
+  .language__img {
+    width: 75px;
+    height: 75px;
   }
   .project__wrapper {
     flex-direction: column;
